@@ -53,3 +53,11 @@ output = intersect[[reporting_geoid, reference_geoid, 'weight']]
 ## saving output
 os.chdir(output_path)
 output.to_csv(output_fname, index = False)
+
+
+
+# A final note - if you have OSErrors, there is something wrong with your environment and shapely.
+# A stated fix can be found here: https://github.com/conda-forge/shapely-feedstock/issues/64
+# Thank you to Daniel Bischof for pointing out this potential problem and finding the solution.
+
+
