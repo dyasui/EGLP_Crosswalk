@@ -35,7 +35,7 @@ intersect['area'] = intersect.area
 intersect['weight'] = intersect['area'] / intersect['area_base']
 
 ## renormalizing weights - this isn't necesary, but without it, if the shapefiles do not perfectly line up where they should, you may lose small fractions of area here and there
-reweight = temp.groupby(reporting_geoid)['weight'].sum().reset_index()
+reweight = intersect.groupby(reporting_geoid)['weight'].sum().reset_index()
 reweight['new_weight'] = reweight['weight']
 reweight = reweight.drop('weight', axis = 1)
 
