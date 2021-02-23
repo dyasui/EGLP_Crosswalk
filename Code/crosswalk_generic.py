@@ -16,6 +16,7 @@ reference_geoid = 'REFERENCE_GEOID'
 output_path = 'OUTPUT_PATH'
 output_fname = 'OUTPUT_FNAME'
 
+# A note: the reporting and reference geo_ids should be different.
 
 ## read in starting shapefile
 os.chdir(reporting_path)
@@ -50,4 +51,5 @@ output = intersect[[reporting_geoid, reference_geoid, 'weight']]
 
 
 ## saving output
+os.chdir(output_path)
 output.to_csv(output_fname, index = False)
